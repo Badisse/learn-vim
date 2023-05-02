@@ -1,9 +1,6 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import { signIn, signOut, useSession } from "next-auth/react";
-import CodeMirror from "@uiw/react-codemirror";
-import { dracula } from "@uiw/codemirror-theme-dracula";
-import { vim } from "@replit/codemirror-vim";
 import { api } from "~/utils/api";
 
 const Home: NextPage = () => {
@@ -21,12 +18,6 @@ const Home: NextPage = () => {
           <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
             Create <span className="text-[hsl(280,100%,70%)]">T3</span> App
           </h1>
-          <CodeMirror
-            value="console.log('hello world!');"
-            height="200px"
-            theme={dracula}
-            extensions={[vim()]}
-          />
           <div className="flex flex-col items-center gap-2">
             <p className="text-2xl text-white">
               {hello.data ? hello.data.greeting : "Loading tRPC query..."}
